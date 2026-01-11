@@ -50,11 +50,12 @@
     }
 
     /* ===== HARD-LINKED BUILD FILES ===== */
+    var buildUrl = "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/Build";
 
     var config = {
-      dataUrl: "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/Build/gtagwebR2.data.unityweb",
-      frameworkUrl: "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/Build/gtagwebR2.framework.js.unityweb",
-      codeUrl: "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/Build/gtagwebR2.wasm.unityweb",
+      dataUrl: buildUrl + "/gtagwebR2.data.unityweb",
+      frameworkUrl: buildUrl + "/gtagwebR2.framework.js.unityweb",
+      codeUrl: buildUrl + "/gtagwebR2.wasm.unityweb",
       streamingAssetsUrl: "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/StreamingAssets",
       companyName: "boolonx",
       productName: "gorilla tag web",
@@ -77,7 +78,7 @@
     loadingBar.style.display = "block";
 
     var script = document.createElement("script");
-    script.src = "https://raw.githubusercontent.com/xxuep/gorilla-tag/main/Build/gtagwebR2.loader.js";
+    script.src = buildUrl + "/gtagwebR2.loader.js";
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = (progress * 100) + "%";
